@@ -110,7 +110,7 @@ function updateBreadcrumb(product, categories) {
   categoryLink.href = `index.html?catid=${product.catid}`;
 
   document.getElementById("breadcrumb-product-name").textContent = product.name;
-  document.title = `${product.name} - TechShop`;
+  document.title = `${product.name} | Shop-Web`;
 }
 
 function renderError(message) {

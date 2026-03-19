@@ -1,7 +1,7 @@
 {
-  "name": "techshop-demo",
+  "name": "shop-web",
   "version": "1.0.0",
-  "description": "A small full-stack electronics storefront demo built with Node.js, Express, SQLite, and vanilla JavaScript.",
+  "description": "A portfolio storefront project built with Node.js, Express, SQLite, and vanilla JavaScript.",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
