@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Products</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TechShop Admin</h1>
+            </div>
+            <nav>
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Storefront</a></li>
+                    <li>Product Management</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-panel">
+        <div class="container">
+            <h2>Product Management</h2>
+            <p class="admin-note">Demo-only admin surface for local portfolio review. Authentication is intentionally omitted.</p>
+            <p class="status-message" id="status-message"></p>
+
+            <div class="admin-grid">
+                <form id="create-product-form" class="admin-form" enctype="multipart/form-data">
+                    <h3>Create Product</h3>
+                    <label for="create-product-catid">Category</label>
+                    <select id="create-product-catid" name="catid" required></select>
+                    <label for="create-product-name">Name</label>
+                    <input id="create-product-name" name="name" type="text" maxlength="200" required>
+                    <label for="create-product-price">Price</label>
+                    <input id="create-product-price" name="price" type="number" min="0" step="0.01" required>
+                    <label for="create-product-description">Description</label>
+                    <textarea id="create-product-description" name="description" rows="4" maxlength="5000" required></textarea>
+                    <label for="create-product-image">Image (<=10MB)</label>
+                    <input id="create-product-image" name="image" type="file" accept="image/*">
+                    <button type="submit">Create</button>
+                </form>
+
+                <form id="update-product-form" class="admin-form" enctype="multipart/form-data">
+                    <h3>Update Product</h3>
+                    <label for="update-product-id">Product</label>
+                    <select id="update-product-id" name="pid" required></select>
+                    <label for="update-product-catid">Category</label>
+                    <select id="update-product-catid" name="catid" required></select>
+                    <label for="update-product-name">Name</label>
+                    <input id="update-product-name" name="name" type="text" maxlength="200" required>
+                    <label for="update-product-price">Price</label>
+                    <input id="update-product-price" name="price" type="number" min="0" step="0.01" required>
+                    <label for="update-product-description">Description</label>
+                    <textarea id="update-product-description" name="description" rows="4" maxlength="5000" required></textarea>
+                    <label for="update-product-image">Replace Image (optional)</label>
+                    <input id="update-product-image" name="image" type="file" accept="image/*">
+                    <button type="submit">Update</button>
+                </form>
+
+                <form id="delete-product-form" class="admin-form danger-form">
+                    <h3>Delete Product</h3>
+                    <label for="delete-product-id">Product</label>
+                    <select id="delete-product-id" name="pid" required></select>
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+
+            <section class="admin-table-wrap">
+                <h3>Current Products</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>pid</th>
+                            <th>catid</th>
+                            <th>name</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table-body"></tbody>
+                </table>
+            </section>
+
+            <p class="admin-nav-link"><a href="admin-categories.html">Go to Category Management</a></p>
+        </div>
+    </main>
+
+    <script src="js/admin-products.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "techshop-demo",
+  "version": "1.0.0",
+  "description": "A small full-stack electronics storefront demo built with Node.js, Express, SQLite, and vanilla JavaScript.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "start:admin": "node server/index.js --enable-demo-admin"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sqlite",
+    "vanilla-js",
+    "ecommerce"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "multer": "^2.0.2",
+    "sharp": "^0.34.5",
+    "sqlite3": "^6.0.1"
+  }
+}
