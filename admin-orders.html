@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Orders</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TechShop Admin</h1>
+            </div>
+            <nav>
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Storefront</a></li>
+                    <li>Order Management</li>
+                </ul>
+            </nav>
+            <span class="user-indicator" id="user-indicator">Guest</span>
+        </div>
+    </header>
+
+    <main class="admin-panel">
+        <div class="container">
+            <h2>Order Management</h2>
+            <p class="status-message" id="status-message"></p>
+
+            <section class="admin-table-wrap">
+                <h3>All Orders</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Items</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table-body"></tbody>
+                </table>
+            </section>
+
+            <p class="admin-nav-link">
+                <a href="admin-categories.html">Category Management</a> |
+                <a href="admin-products.html">Product Management</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="js/auth-common.js"></script>
+    <script src="js/admin-orders.js"></script>
+</body>
+</html>

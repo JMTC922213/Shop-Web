@@ -206,8 +206,9 @@ function formatPrice(price) {
   });
 }
 
-// Initialize cart when page loads
+// Initialize cart when page loads — expose globally for checkout.js
 document.addEventListener("DOMContentLoaded", function () {
   var cart = new ShoppingCart();
   cart.init();
+  window.shopCart = cart;
 });

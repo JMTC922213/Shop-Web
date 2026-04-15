@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const sqlite3 = require("sqlite3");
+const bcrypt = require("bcryptjs");
 
 const DB_PATH = path.join(__dirname, "..", "db", "techshop.sqlite");
 const SCHEMA_PATH = path.join(__dirname, "..", "db", "schema.sql");
@@ -66,6 +67,16 @@ async function initializeDatabase(db) {
         resolve();
       });
     });
+  }
+
+  const userCount = await get(db, "SELECT COUNT(*) AS count FROM users");
+  if (userCount.count === 0) {
+    const adminHash = await bcrypt.hash("Admin123!", 10);
+    const userHash = await bcrypt.hash("User1234!", 10);
+    await run(db, "INSERT INTO users (email, name, password, is_admin) VALUES (?, ?, ?, ?)",
+      ["admin@techshop.com", "Admin", adminHash, 1]);
+    await run(db, "INSERT INTO users (email, name, password, is_admin) VALUES (?, ?, ?, ?)",
+      ["user@techshop.com", "User", userHash, 0]);
   }
 }
 

@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop-Web | Storefront</title>
+    <title>TechShop - Premium Electronics Store</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Shop-Web</h1>
+                <h1>TechShop</h1>
             </div>
             <nav>
                 <ul class="breadcrumb">
                     <li><a href="index.html">Home</a></li>
                 </ul>
             </nav>
+            <span class="user-indicator" id="user-indicator">Guest</span>
         </div>
     </header>
 
@@ -41,8 +42,8 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h2>Storefront Portfolio Project</h2>
-                <p>Browse products, filter categories, and explore a small full-stack catalog experience.</p>
+                <h2>Welcome to TechShop</h2>
+                <p>Discover the latest in premium electronics</p>
             </div>
         </section>
 
@@ -66,11 +67,18 @@
 
     <footer>
         <div class="container">
-            <p>Shop-Web portfolio project built with Node.js, Express, SQLite, and vanilla JavaScript.</p>
+
+            <nav>
+                <ul>
+                    <li><a href="admin-categories.html">Admin</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 
+    <script src="js/auth-common.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
     <script src="js/index-page.js"></script>
 </body>
 </html>

@@ -458,11 +458,6 @@ footer a:hover {
     margin-bottom: 15px;
 }
 
-.admin-note {
-    margin-bottom: 12px;
-    color: #555;
-}
-
 .status-message {
     min-height: 24px;
     margin-bottom: 20px;
@@ -588,4 +583,95 @@ footer a:hover {
 
 .cart-item-delete:hover {
     background-color: #c0392b;
+}
+
+/* User indicator in header */
+.user-indicator {
+    color: #ecf0f1;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.user-indicator a {
+    color: #ecf0f1;
+    text-decoration: underline;
+}
+
+.user-indicator a:hover {
+    color: white;
+}
+
+/* Order cards (My Orders page) */
+.order-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-id {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.order-items {
+    margin-bottom: 12px;
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.order-total {
+    font-weight: bold;
+    font-size: 18px;
+    color: #e74c3c;
+}
+
+.order-date {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Order status badges */
+.order-status {
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-paid {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-failed {
+    background-color: #f8d7da;
+    color: #721c24;
 }

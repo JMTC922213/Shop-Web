@@ -5,7 +5,17 @@ function setStatus(message, isError = false) {
 }
 
 async function fetchJson(url, options = {}) {
+  if (options.method && options.method !== "GET") {
+    options.headers = options.headers || {};
+    if (typeof csrfToken === "string" && csrfToken) {
+      options.headers["X-CSRF-Token"] = csrfToken;
+    }
+  }
   const response = await fetch(url, options);
+  if (response.status === 401) {
+    window.location.href = "/login.html";
+    throw new Error("Authentication required");
+  }
   const data = await response.json().catch(() => ({}));
   if (!response.ok) {
     const details = Array.isArray(data.details)
@@ -127,6 +137,15 @@ document.getElementById("create-category-form").addEventListener("submit", handl
 document.getElementById("update-category-form").addEventListener("submit", handleUpdateCategory);
 document.getElementById("delete-category-form").addEventListener("submit", handleDeleteCategory);
 
-loadCategories().catch((error) => {
-  setStatus(error.message, true);
+// Wait for auth to load before fetching data
+document.addEventListener("DOMContentLoaded", function () {
+  loadCurrentUser().then(function () {
+    if (!currentUser || !currentUser.is_admin) {
+      window.location.href = "/login.html";
+      return;
+    }
+    loadCategories().catch((error) => {
+      setStatus(error.message, true);
+    });
+  });
 });

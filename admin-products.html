@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Management | Shop-Web</title>
+    <title>Admin - Products</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Shop-Web Admin</h1>
+                <h1>TechShop Admin</h1>
             </div>
             <nav>
                 <ul class="breadcrumb">
@@ -18,13 +18,13 @@
                     <li>Product Management</li>
                 </ul>
             </nav>
+            <span class="user-indicator" id="user-indicator">Guest</span>
         </div>
     </header>
 
     <main class="admin-panel">
         <div class="container">
             <h2>Product Management</h2>
-            <p class="admin-note">Local admin surface for portfolio review. Authentication is intentionally omitted.</p>
             <p class="status-message" id="status-message"></p>
 
             <div class="admin-grid">
@@ -83,10 +83,14 @@
                 </table>
             </section>
 
-            <p class="admin-nav-link"><a href="admin-categories.html">Go to Category Management</a></p>
+            <p class="admin-nav-link">
+                <a href="admin-categories.html">Category Management</a> |
+                <a href="admin-orders.html">Order Management</a>
+            </p>
         </div>
     </main>
 
+    <script src="js/auth-common.js"></script>
     <script src="js/admin-products.js"></script>
 </body>
 </html>

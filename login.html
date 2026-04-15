@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TechShop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TechShop</h1>
+            </div>
+            <nav>
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Login</li>
+                </ul>
+            </nav>
+            <span class="user-indicator" id="user-indicator">Guest</span>
+        </div>
+    </header>
+
+    <main class="admin-panel">
+        <div class="container">
+            <h2>Login</h2>
+            <p class="status-message" id="status-message"></p>
+
+            <form id="login-form" class="admin-form" style="max-width:400px;">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" maxlength="254" required>
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" minlength="8" maxlength="128" required>
+                <button type="submit">Log In</button>
+            </form>
+
+            <p style="margin-top:16px;">Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/auth-common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,9 +1,8 @@
 .DS_Store
+.env
 node_modules/
 db/techshop.sqlite
 uploads/products/*
 uploads/thumbnails/*
 !uploads/products/.gitkeep
 !uploads/thumbnails/.gitkeep
-*.log
-.claude/
